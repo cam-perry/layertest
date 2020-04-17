@@ -1,0 +1,11 @@
+#This is a sample LayerCI configuration!
+#All you have to do is edit your name on the bottom line
+#and press 'Start LayerCI job'.
+FROM vm/ubuntu:18.04
+
+COPY . /project
+WORKDIR /project
+RUN /bin/bash install-docker.sh && docker build -t cam-perry/layertest:${LAYERCI_JOB_ID} . && docker run --name layertest -d -p 80:8000 cam-perry/layertest:${LAYERCI_JOB_ID}
+EXPOSE WEBSITE http://localhost
+
+

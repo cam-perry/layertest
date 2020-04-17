@@ -1,8 +1,0 @@
-#This is a sample LayerCI configuration!
-#All you have to do is edit your name on the bottom line
-#and press 'Start LayerCI job'.
-FROM vm/ubuntu:18.04
-
-RUN echo 'This repository is called cam-perry/layertest'
-
-
